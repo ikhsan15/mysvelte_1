@@ -3,21 +3,27 @@
     {nama: 'ikhsan', beltColour: 'black', usia: 35, id: 1},
     {nama: 'aida', beltColour: 'brown', usia: 24, id: 2},
     {nama: 'aican', beltColour: 'orange', usia: 40, id: 3}
-  ];
-
-  const handleClick = (id) => {
-    // delete the person from orang
-    orang = orang.filter((person) => person.id != id)
-  }
+  ]
 </script>
 
-<main>  
+<main>
+  <!-- <div>
+    <h4>{orang[0].nama}</h4>
+    <p>{orang[0].beltColour}</p>
+  </div>
+  <div>
+    <h4>{orang[1].nama}</h4>
+    <p>{orang[1].beltColour}</p>
+  </div>
+  <div>
+    <h4>{orang[2].nama}</h4>
+    <p>{orang[2].beltColour}</p>
+  </div> -->
+  
   {#each orang as person (person.id)}
     <div>
       <h4>{person.nama}</h4>
       <p>{person.usia} years old, {person.beltColour} belt.</p>
-      <!-- <button on:click={() => {console.log('click me'); }}>delete</button> -->
-      <button on:click={() => {handleClick(person.id)}}>delete</button>      
     </div>
     {:else}
       <p>There are no peaplo to show ...</p>
