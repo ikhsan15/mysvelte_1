@@ -14,22 +14,23 @@
 
 </script>
 
-<IniModal />
-<main>  
-  {#each orang as person (person.id)}
-    <div>
-      <h4>{person.nama}</h4>
-      {#if person.beltColour === 'black'}
-        <p><strong>MASTER NINJA</strong></p>
-      {/if}
-      <p>{person.usia} years old, {person.beltColour} belt.</p>
-      <!-- <button on:click={() => {console.log('click me'); }}>delete</button> -->
-      <button on:click={() => {handleClick(person.id)}}>delete</button>      
-    </div>
-    {:else}
-      <p>There are no peaplo to show ...</p>
-  {/each}
-</main>
+<!-- <IniModal message="Hey, Iam a prop value" isPromo={true}/> -->
+<IniModal message="Hey there again"/>
+  <main>  
+    {#each orang as person (person.id)}
+      <div>
+        <h4>{person.nama}</h4>
+        {#if person.beltColour === 'black'}
+          <p><strong>MASTER NINJA</strong></p>
+        {/if}
+        <p>{person.usia} years old, {person.beltColour} belt.</p>
+        <!-- <button on:click={() => {console.log('click me'); }}>delete</button> -->
+        <button on:click={() => {handleClick(person.id)}}>delete</button>      
+      </div>
+      {:else}
+        <p>There are no peaplo to show ...</p>
+    {/each}
+  </main>
 
 <style>
 	main {
