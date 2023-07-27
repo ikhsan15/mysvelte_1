@@ -9,25 +9,12 @@
     // delete the person from orang
     orang = orang.filter((person) => person.id != id)
   }
-
-  let num = 4;
 </script>
-
-{#if num > 20}
-  <p>besar dari 20</p>
-{:else if num >5}
-  <p>besar dari 5</p>
-{:else}
-  <p>kecil dari 5</p>
-{/if}
 
 <main>  
   {#each orang as person (person.id)}
     <div>
       <h4>{person.nama}</h4>
-      {#if person.beltColour === 'black'}
-        <p><strong>MASTER NINJA</strong></p>
-      {/if}
       <p>{person.usia} years old, {person.beltColour} belt.</p>
       <!-- <button on:click={() => {console.log('click me'); }}>delete</button> -->
       <button on:click={() => {handleClick(person.id)}}>delete</button>      
