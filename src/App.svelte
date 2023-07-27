@@ -1,4 +1,6 @@
 <script>
+  import IniModal from './Modal.svelte';
+
   let orang = [
     {nama: 'ikhsan', beltColour: 'black', usia: 35, id: 1},
     {nama: 'aida', beltColour: 'brown', usia: 24, id: 2},
@@ -10,17 +12,9 @@
     orang = orang.filter((person) => person.id != id)
   }
 
-  let num = 4;
 </script>
 
-{#if num > 20}
-  <p>besar dari 20</p>
-{:else if num >5}
-  <p>besar dari 5</p>
-{:else}
-  <p>kecil dari 5</p>
-{/if}
-
+<IniModal />
 <main>  
   {#each orang as person (person.id)}
     <div>
